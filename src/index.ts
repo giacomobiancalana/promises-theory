@@ -2,6 +2,7 @@ type TFile = { nome: string, size: number, };
 const files = getFiles();
 let totalSize = 0;
 
+// Scrittura alernativa per eseguire la funzione gogo()
 // (async () => {
 // 	await Promise.all(
 // 		files.map(async (file) => {
@@ -16,7 +17,7 @@ let totalSize = 0;
 async function gogo() {
   await Promise.all(
     files.map(async (file) => {
-      // totalSize += await getSize(file);
+      // totalSize = totalSize + await getSize(file);
       const fileSize = await getSize(file);
       totalSize += fileSize;
     })
